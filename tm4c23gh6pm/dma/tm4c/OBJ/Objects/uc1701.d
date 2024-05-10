@@ -1,0 +1,13 @@
+.\objects\uc1701.o: ..\LIB\screen\uc1701.c
+.\objects\uc1701.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\uc1701.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\uc1701.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\uc1701.o: ..\LIB\inc/hw_memmap.h
+.\objects\uc1701.o: ..\LIB\driverlib/gpio.h
+.\objects\uc1701.o: ..\LIB\driverlib/pin_map.h
+.\objects\uc1701.o: ..\LIB\driverlib/sysctl.h
+.\objects\uc1701.o: ..\LIB\driverlib/systick.h
+.\objects\uc1701.o: ..\LIB\driverlib/ssi.h
+.\objects\uc1701.o: ..\LIB\screen\uc1701.h
+.\objects\uc1701.o: ..\LIB\screen\hw_uc1701.h
+.\objects\uc1701.o: ..\LIB\screen\uc1701.h

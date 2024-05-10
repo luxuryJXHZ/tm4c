@@ -1,0 +1,17 @@
+.\objects\main.o: ..\USER\main.c
+.\objects\main.o: ..\USER\start.h
+.\objects\main.o: ..\USER\LED.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: ..\LIB\inc/hw_ints.h
+.\objects\main.o: ..\LIB\inc/hw_nvic.h
+.\objects\main.o: ..\LIB\inc/hw_sysctl.h
+.\objects\main.o: ..\LIB\inc/hw_types.h
+.\objects\main.o: ..\LIB\inc/hw_flash.h
+.\objects\main.o: ..\LIB\driverlib/cpu.h
+.\objects\main.o: ..\LIB\driverlib/debug.h
+.\objects\main.o: ..\LIB\driverlib/interrupt.h
+.\objects\main.o: ..\LIB\driverlib/sysctl.h
+.\objects\main.o: ..\LIB\inc/hw_gpio.h
+.\objects\main.o: ..\LIB\inc/hw_memmap.h
+.\objects\main.o: ..\LIB\driverlib/gpio.h
