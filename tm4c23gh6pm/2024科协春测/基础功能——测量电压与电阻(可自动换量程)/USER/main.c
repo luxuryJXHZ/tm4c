@@ -235,7 +235,7 @@ void secernprintf(char *str,int x)
 }
 	
 void AC_1()
-	{ ADG409BNZ_A0_0;
+	{ ADG409BNZ_A0_1;
 		ADG409BNZ_A1_0;
 		ADG409BNZ1_A0_1;
 		ADG409BNZ1_A1_0;
@@ -251,8 +251,7 @@ void AC_1()
 		TimerControlTrigger(TIMER1_BASE,TIMER_B,true);	
 		ADCSequenceDataGet(ADC1_BASE,3,&adepeovalue);
 		sum=sum+adepeovalue*3300/4096;}
-		int average=sum/100-900;
-		average=200*144/average;
+		int average=sum/100;
 //		if(average>200)
 //		i=i+1;
 //		else
