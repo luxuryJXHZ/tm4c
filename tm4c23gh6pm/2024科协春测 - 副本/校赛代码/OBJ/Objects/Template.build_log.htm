@@ -29,6 +29,7 @@ Project File Date:  04/27/2024
 Rebuild target 'Template'
 Note: source file '..\LIB\driverlib\adc.c' - object file renamed from '.\Objects\adc.o' to '.\Objects\adc_1.o'.
 Note: source file '..\LIB\driverlib\uart.c' - object file renamed from '.\Objects\uart.o' to '.\Objects\uart_1.o'.
+compiling aes.c...
 compiling LED.c...
 ..\USER\LED.h(4): warning:  #1295-D: Deprecated declaration LED_int - give arg types
   extern void LED_int();
@@ -43,74 +44,7 @@ compiling LED.c...
 ..\USER\LED.c(90): warning:  #1-D: last line of file ends without a newline
   }
 ..\USER\LED.c: 6 warnings, 0 errors
-compiling aes.c...
 compiling adc.c...
-compiling can.c...
-compiling start.c...
-..\USER\start.h(17): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\USER\start.c: 1 warning, 0 errors
-compiling comp.c...
-compiling key.c...
-..\USER\key.h(4): warning:  #1295-D: Deprecated declaration key_INT - give arg types
-  extern void key_INT();
-..\USER\key.h(5): warning:  #1295-D: Deprecated declaration key_enable - give arg types
-  extern void key_enable();
-..\USER\key.h(8): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\USER\key.c(81): warning:  #1-D: last line of file ends without a newline
-  //**************************************************************************************
-..\USER\key.c: 4 warnings, 0 errors
-compiling time0.c...
-..\USER\start.h(17): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\USER\time0.h(4): warning:  #1295-D: Deprecated declaration TIME_INT - give arg types
-  extern void TIME_INT();
-..\USER\time0.h(6): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\USER\time0.c: 3 warnings, 0 errors
-compiling lxy_ADC.c...
-..\USER\start.h(17): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\USER\lxy_ADC.h(5): warning:  #1295-D: Deprecated declaration ADC_init_SS0 - give arg types
-  extern void ADC_init_SS0();
-..\USER\lxy_ADC.h(6): warning:  #1295-D: Deprecated declaration ADC_init_SS1 - give arg types
-  extern void ADC_init_SS1();
-..\USER\lxy_ADC.h(7): warning:  #1295-D: Deprecated declaration ADC_init_SS2 - give arg types
-  extern void ADC_init_SS2();
-..\USER\lxy_ADC.h(8): warning:  #1295-D: Deprecated declaration ADC_init_SS3 - give arg types
-  extern void ADC_init_SS3();
-..\USER\lxy_ADC.h(13): warning:  #1295-D: Deprecated declaration ADC_SS0_INT - give arg types
-  extern void ADC_SS0_INT();
-..\USER\lxy_ADC.h(14): warning:  #1295-D: Deprecated declaration ADC_SS1_INT - give arg types
-  extern void ADC_SS1_INT();
-..\USER\lxy_ADC.h(15): warning:  #1295-D: Deprecated declaration ADC_SS2_INT - give arg types
-  extern void ADC_SS2_INT();
-..\USER\lxy_ADC.h(16): warning:  #1295-D: Deprecated declaration ADC_SS3_INT - give arg types
-  extern void ADC_SS3_INT();
-..\USER\lxy_ADC.h(19): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\USER\lxy_ADC.c: 10 warnings, 0 errors
-compiling lxy_uart.c...
-..\USER\start.h(17): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\USER\lxy_uart.h(4): warning:  #1295-D: Deprecated declaration UART0_INT - give arg types
-  extern void UART0_INT();
-..\USER\lxy_uart.h(5): warning:  #1295-D: Deprecated declaration UART0_enable - give arg types
-  extern void UART0_enable();
-..\USER\lxy_uart.h(8): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\USER\lxy_uart.c(70): warning:  #1-D: last line of file ends without a newline
-  }
-..\USER\lxy_uart.c: 5 warnings, 0 errors
-compiling lxy_PWM.c...
-..\USER\lxy_PWM.h(5): warning:  #1295-D: Deprecated declaration PWM_init - give arg types
-  extern void PWM_init();
-..\USER\lxy_PWM.h(10): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\USER\lxy_PWM.c(74): warning:  #1-D: last line of file ends without a newline
-  }
-..\USER\lxy_PWM.c: 3 warnings, 0 errors
 compiling main.c...
 ..\USER\start.h(17): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -154,29 +88,94 @@ compiling main.c...
   #endif
 ..\USER\ADG409BNZ.h(56): warning:  #1-D: last line of file ends without a newline
   #endif
-..\USER\main.c(47): warning:  #1295-D: Deprecated declaration AC_1 - give arg types
+..\USER\main.c(49): warning:  #1295-D: Deprecated declaration AC_1 - give arg types
   void AC_1();
-..\USER\main.c(48): warning:  #1295-D: Deprecated declaration AC_2 - give arg types
+..\USER\main.c(50): warning:  #1295-D: Deprecated declaration AC_2 - give arg types
   void AC_2();
-..\USER\main.c(49): warning:  #1295-D: Deprecated declaration AC_3 - give arg types
+..\USER\main.c(51): warning:  #1295-D: Deprecated declaration AC_3 - give arg types
   void AC_3();
-..\USER\main.c(50): warning:  #1295-D: Deprecated declaration AC_4 - give arg types
+..\USER\main.c(52): warning:  #1295-D: Deprecated declaration AC_4 - give arg types
   void AC_4();
-..\USER\main.c(51): warning:  #1295-D: Deprecated declaration AC_5 - give arg types
-  void AC_5();
-..\USER\main.c(52): warning:  #1295-D: Deprecated declaration qiehuan - give arg types
-  void qiehuan();
-..\USER\main.c(53): warning:  #1295-D: Deprecated declaration init - give arg types
+..\USER\main.c(55): warning:  #1295-D: Deprecated declaration up - give arg types
+  void up();
+..\USER\main.c(56): warning:  #1295-D: Deprecated declaration down - give arg types
+  void down();
+..\USER\main.c(57): warning:  #1295-D: Deprecated declaration init - give arg types
   void init();
-..\USER\main.c(54): warning:  #1295-D: Deprecated declaration gpioinit - give arg types
+..\USER\main.c(58): warning:  #1295-D: Deprecated declaration gpioinit - give arg types
   void gpioinit();
-..\USER\main.c(101): warning:  #177-D: variable "k"  was declared but never referenced
-  			int k;
-..\USER\main.c(102): warning:  #177-D: variable "current"  was declared but never referenced
-  	int current;
-..\USER\main.c(252): warning:  #1-D: last line of file ends without a newline
-  	}
-..\USER\main.c: 32 warnings, 0 errors
+..\USER\main.c(109): warning:  #223-D: function "GPIOIntStatus" declared implicitly
+  	status=GPIOIntStatus(GPIO_PORTD_BASE,true);
+..\USER\main.c(116): warning:  #223-D: function "GPIOIntStatus" declared implicitly
+  	status=GPIOIntStatus(GPIO_PORTF_BASE,true);
+..\USER\main.c: 31 warnings, 0 errors
+compiling start.c...
+..\USER\start.h(17): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\USER\start.c: 1 warning, 0 errors
+compiling comp.c...
+compiling can.c...
+compiling time0.c...
+..\USER\start.h(17): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\USER\time0.h(4): warning:  #1295-D: Deprecated declaration TIME_INT - give arg types
+  extern void TIME_INT();
+..\USER\time0.h(6): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\USER\time0.c: 3 warnings, 0 errors
+compiling lxy_ADC.c...
+..\USER\start.h(17): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\USER\lxy_ADC.h(5): warning:  #1295-D: Deprecated declaration ADC_init_SS0 - give arg types
+  extern void ADC_init_SS0();
+..\USER\lxy_ADC.h(6): warning:  #1295-D: Deprecated declaration ADC_init_SS1 - give arg types
+  extern void ADC_init_SS1();
+..\USER\lxy_ADC.h(7): warning:  #1295-D: Deprecated declaration ADC_init_SS2 - give arg types
+  extern void ADC_init_SS2();
+..\USER\lxy_ADC.h(8): warning:  #1295-D: Deprecated declaration ADC_init_SS3 - give arg types
+  extern void ADC_init_SS3();
+..\USER\lxy_ADC.h(13): warning:  #1295-D: Deprecated declaration ADC_SS0_INT - give arg types
+  extern void ADC_SS0_INT();
+..\USER\lxy_ADC.h(14): warning:  #1295-D: Deprecated declaration ADC_SS1_INT - give arg types
+  extern void ADC_SS1_INT();
+..\USER\lxy_ADC.h(15): warning:  #1295-D: Deprecated declaration ADC_SS2_INT - give arg types
+  extern void ADC_SS2_INT();
+..\USER\lxy_ADC.h(16): warning:  #1295-D: Deprecated declaration ADC_SS3_INT - give arg types
+  extern void ADC_SS3_INT();
+..\USER\lxy_ADC.h(19): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\USER\lxy_ADC.c: 10 warnings, 0 errors
+compiling key.c...
+..\USER\key.h(4): warning:  #1295-D: Deprecated declaration key_INT - give arg types
+  extern void key_INT();
+..\USER\key.h(5): warning:  #1295-D: Deprecated declaration key_enable - give arg types
+  extern void key_enable();
+..\USER\key.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\USER\key.c(81): warning:  #1-D: last line of file ends without a newline
+  //**************************************************************************************
+..\USER\key.c: 4 warnings, 0 errors
+compiling lxy_uart.c...
+..\USER\start.h(17): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\USER\lxy_uart.h(4): warning:  #1295-D: Deprecated declaration UART0_INT - give arg types
+  extern void UART0_INT();
+..\USER\lxy_uart.h(5): warning:  #1295-D: Deprecated declaration UART0_enable - give arg types
+  extern void UART0_enable();
+..\USER\lxy_uart.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\USER\lxy_uart.c(70): warning:  #1-D: last line of file ends without a newline
+  }
+..\USER\lxy_uart.c: 5 warnings, 0 errors
+compiling lxy_PWM.c...
+..\USER\lxy_PWM.h(5): warning:  #1295-D: Deprecated declaration PWM_init - give arg types
+  extern void PWM_init();
+..\USER\lxy_PWM.h(10): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\USER\lxy_PWM.c(74): warning:  #1-D: last line of file ends without a newline
+  }
+..\USER\lxy_PWM.c: 3 warnings, 0 errors
+compiling cpu.c...
 compiling ADG409BNZ.c...
 ..\USER\start.h(17): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -217,7 +216,6 @@ compiling ADG409BNZ.c...
 ..\USER\ADG409BNZ.c(44): warning:  #1-D: last line of file ends without a newline
   #include "utils/uartstdio.h"
 ..\USER\ADG409BNZ.c: 19 warnings, 0 errors
-compiling cpu.c...
 compiling crc.c...
 compiling des.c...
 compiling eeprom.c...
@@ -226,32 +224,32 @@ compiling epi.c...
 compiling flash.c...
 compiling fpu.c...
 compiling gpio.c...
+compiling i2c.c...
 compiling hibernate.c...
-compiling interrupt.c...
 compiling mpu.c...
+compiling interrupt.c...
 compiling lcd.c...
 compiling onewire.c...
-compiling i2c.c...
 compiling qei.c...
 compiling shamd5.c...
-compiling sw_crc.c...
 compiling pwm.c...
-compiling ssi.c...
-compiling systick.c...
+compiling sw_crc.c...
 compiling sysexc.c...
-compiling udma.c...
-compiling watchdog.c...
+compiling systick.c...
+compiling ssi.c...
 compiling timer.c...
 compiling uart.c...
+compiling watchdog.c...
+compiling udma.c...
+compiling uc1701.c...
 assembling startup_rvmdk.S...
 compiling sysctl.c...
-compiling uc1701.c...
 compiling uartstdio.c...
 compiling usb.c...
 compiling pcf8575.c...
 linking...
-Program Size: Code=4808 RO-data=1180 RW-data=1532 ZI-data=260  
-".\Objects\Template.axf" - 0 Error(s), 83 Warning(s).
+Program Size: Code=7744 RO-data=1448 RW-data=2668 ZI-data=260  
+".\Objects\Template.axf" - 0 Error(s), 82 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -264,7 +262,7 @@ Package Vendor: Keil
   C:\Users\Â¬ÏþÑî\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:04
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>

@@ -51,6 +51,6 @@
 #define ADG409BNZ_A1_0 	GPIOPinWrite(PD,P_0,0)
 #define ADG409BNZ1_A0_1 GPIOPinWrite(PD,P_3,P_3)
 #define ADG409BNZ1_A0_0 GPIOPinWrite(PD,P_3,0) 
-#define ADG409BNZ1_A1_1 GPIOPinWrite(PD,P_2,P_2)
-#define ADG409BNZ1_A1_0 GPIOPinWrite(PD,P_2,0)
+#define ADG409BNZ1_A1_1 GPIOPinWrite(PD,P_7,P_7)
+#define ADG409BNZ1_A1_0 GPIOPinWrite(PD,P_7,0)
 #endif
