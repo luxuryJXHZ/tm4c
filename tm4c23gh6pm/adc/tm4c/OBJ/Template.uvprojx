@@ -399,6 +399,16 @@
               <FileType>1</FileType>
               <FilePath>..\USER\LED.c</FilePath>
             </File>
+            <File>
+              <FileName>oled.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\oled.c</FilePath>
+            </File>
+            <File>
+              <FileName>iic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\iic.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -2,6 +2,8 @@
 ".\objects\main.o"
 ".\objects\start.o"
 ".\objects\led.o"
+".\objects\oled.o"
+".\objects\iic.o"
 ".\objects\adc.o"
 ".\objects\aes.o"
 ".\objects\can.o"

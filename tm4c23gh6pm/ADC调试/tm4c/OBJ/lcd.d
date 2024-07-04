@@ -1,0 +1,11 @@
+.\lcd.o: ..\LIB\driverlib\lcd.c
+.\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\lcd.o: ..\LIB\inc/hw_memmap.h
+.\lcd.o: ..\LIB\inc/hw_types.h
+.\lcd.o: ..\LIB\inc/hw_ints.h
+.\lcd.o: ..\LIB\inc/hw_lcd.h
+.\lcd.o: ..\LIB\driverlib/interrupt.h
+.\lcd.o: ..\LIB\driverlib/sysctl.h
+.\lcd.o: ..\LIB\driverlib/lcd.h
+.\lcd.o: ..\LIB\driverlib/debug.h

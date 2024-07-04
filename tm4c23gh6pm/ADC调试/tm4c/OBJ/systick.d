@@ -1,0 +1,9 @@
+.\systick.o: ..\LIB\driverlib\systick.c
+.\systick.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\systick.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\systick.o: ..\LIB\inc/hw_ints.h
+.\systick.o: ..\LIB\inc/hw_nvic.h
+.\systick.o: ..\LIB\inc/hw_types.h
+.\systick.o: ..\LIB\driverlib/debug.h
+.\systick.o: ..\LIB\driverlib/interrupt.h
+.\systick.o: ..\LIB\driverlib/systick.h

@@ -1,6 +1,6 @@
 --cpu=Cortex-M4.fp.sp
 ".\objects\main.o"
-".\objects\start.o"
+".\objects\oled.o"
 ".\objects\adc.o"
 ".\objects\aes.o"
 ".\objects\can.o"

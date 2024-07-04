@@ -1,0 +1,11 @@
+.\gpio.o: ..\LIB\driverlib\gpio.c
+.\gpio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\gpio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\gpio.o: ..\LIB\inc/hw_gpio.h
+.\gpio.o: ..\LIB\inc/hw_ints.h
+.\gpio.o: ..\LIB\inc/hw_memmap.h
+.\gpio.o: ..\LIB\inc/hw_sysctl.h
+.\gpio.o: ..\LIB\inc/hw_types.h
+.\gpio.o: ..\LIB\driverlib/debug.h
+.\gpio.o: ..\LIB\driverlib/gpio.h
+.\gpio.o: ..\LIB\driverlib/interrupt.h

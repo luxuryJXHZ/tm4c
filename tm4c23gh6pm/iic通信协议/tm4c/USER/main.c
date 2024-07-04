@@ -46,11 +46,11 @@ uint8_t t;
 int main(void)
 {
     	SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
-			t='a';
+			t=0x78;
 			I2C_Init();
 			while(1)
 			{
-			  IO_OUTPUT_SET(0x8000);
+//			  IO_OUTPUT_SET(0x8000);
 				I2C_SendByte(t);
 			}
 		

@@ -1,0 +1,11 @@
+.\qei.o: ..\LIB\driverlib\qei.c
+.\qei.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\qei.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\qei.o: ..\LIB\inc/hw_ints.h
+.\qei.o: ..\LIB\inc/hw_memmap.h
+.\qei.o: ..\LIB\inc/hw_qei.h
+.\qei.o: ..\LIB\inc/hw_types.h
+.\qei.o: ..\LIB\inc/hw_sysctl.h
+.\qei.o: ..\LIB\driverlib/debug.h
+.\qei.o: ..\LIB\driverlib/interrupt.h
+.\qei.o: ..\LIB\driverlib/qei.h

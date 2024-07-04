@@ -39,12 +39,65 @@
 #include "uc1701.h"
 #include "hw_uc1701.h"
 #include "utils/uartstdio.h"
-uint32_t adcpe0value;
+#define ADC_SAMPLE_BUF_SIZE  1024
 int sum;
 int i;
 int k;
-uint8_t udmatable[1024];
-#pragma DATA_ALIGN(udmatable, 1024)
+enum BUFFER_STATUS
+{
+    EMPTY,
+    FILLING,
+    FULL
+};
+
+//dma控制块需要1024字节对齐
+static uint8_t ControlTable[1024] __attribute__ ((aligned(1024)));
+
+uint16_t ADCBuffer1[ADC_SAMPLE_BUF_SIZE];
+uint16_t ADCBuffer2[ADC_SAMPLE_BUF_SIZE];
+
+static enum BUFFER_STATUS BufferStatus[2];
+
+
+//ADC队列3中断函数
+uint32_t adc_int_count = 0;  //记录中断次数
+void ADC0SS3_Handler(void)
+{
+    adc_int_count++;
+    HWREG(ADC0_BASE + ADC_O_ISC) = HWREG(ADC0_BASE + ADC_O_RIS) & (1 << 8); //清中断
+
+    //判断哪个buffer满了，进行切换
+    if ((uDMAChannelModeGet(UDMA_CHANNEL_ADC0 | UDMA_PRI_SELECT) ==
+                            UDMA_MODE_STOP) && (BufferStatus[0] == FILLING)) {
+        BufferStatus[0] = FULL;
+        BufferStatus[1] = FILLING;
+    } else if ((uDMAChannelModeGet(UDMA_CHANNEL_ADC0 | UDMA_ALT_SELECT) ==
+                                 UDMA_MODE_STOP) && (BufferStatus[1] == FILLING)) {
+        BufferStatus[0] = FILLING;
+        BufferStatus[1] = FULL;
+    }
+    
+    if(BufferStatus[0] == FULL) {
+        BufferStatus[0] = EMPTY;
+        //使能另一个传输块
+        uDMAChannelTransferSet(UDMA_CHANNEL_ADC0 | UDMA_PRI_SELECT,
+                               UDMA_MODE_PINGPONG,
+                               (void *)(ADC0_BASE + ADC_O_SSFIFO0),
+                               ADCBuffer1, ADC_SAMPLE_BUF_SIZE);
+        //启动DMA通道
+        uDMAChannelEnable(UDMA_CHANNEL_ADC0 | UDMA_PRI_SELECT);
+    } else if(BufferStatus[1] == FULL) {
+
+        BufferStatus[1] = EMPTY;
+
+        uDMAChannelTransferSet(UDMA_CHANNEL_ADC0 | UDMA_ALT_SELECT,
+                               UDMA_MODE_PINGPONG,
+                               (void *)(ADC0_BASE + ADC_O_SSFIFO0),
+                               ADCBuffer2, ADC_SAMPLE_BUF_SIZE);
+        uDMAChannelEnable(UDMA_CHANNEL_ADC0 | UDMA_ALT_SELECT);
+    }
+}
+
 char str[20];
 void ADC_V();
 int main(void)
@@ -54,47 +107,44 @@ int main(void)
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE);
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER1);
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_UDMA);
-	
+	ADC_init_SS3();
+	//udma配置 配置adc1，SS3序列
 	uDMAEnable();
-	uDMAControlBaseSet(udmatable);
-	uDMAChannelAttributeEnable(UDMA_CHANNEL_ADC1,UDMA_ATTR_HIGH_PRIORITY|UDMA_ATTR_ALTSELECT|UDMA_ATTR_REQMASK);
-	uDMAChannelControlSet(UDMA_CHANNEL_ADC1| UDMA_PRI_SELECT, UDMA_SIZE_16 |
+    uDMAControlBaseSet(ControlTable); 
+    uDMAChannelAttributeDisable(UDMA_CHANNEL_ADC1,
+                                UDMA_ATTR_ALTSELECT | UDMA_ATTR_HIGH_PRIORITY |
+                                UDMA_ATTR_REQMASK);
+    uDMAChannelControlSet(UDMA_CHANNEL_ADC1 | UDMA_PRI_SELECT, UDMA_SIZE_16 |
                           UDMA_SRC_INC_NONE | UDMA_DST_INC_16 | UDMA_ARB_1);
-	uDMAChannelTransferSet(UDMA_CHANNEL_ADC1|UDMA_PRI_SELECT,UDMA_MODE_PINGPONG,
-	(void*)(ADC1_BASE+ADC_O_SSFIFO3),udmatable,1);
-	uDMAEnable();
-	uDMAChannelRequest(UDMA_CHANNEL_ADC1);
+    uDMAChannelControlSet(UDMA_CHANNEL_ADC1 | UDMA_ALT_SELECT, UDMA_SIZE_16 |
+                          UDMA_SRC_INC_NONE | UDMA_DST_INC_16 | UDMA_ARB_1);
+    uDMAChannelTransferSet(UDMA_CHANNEL_ADC1 | UDMA_PRI_SELECT,
+                           UDMA_MODE_PINGPONG,
+                           (void *)(ADC1_BASE + ADC_O_SSFIFO3),
+                           ADCBuffer1, ADC_SAMPLE_BUF_SIZE);
+    uDMAChannelTransferSet(UDMA_CHANNEL_ADC0 | UDMA_ALT_SELECT,
+                           UDMA_MODE_PINGPONG,
+                           (void *)(ADC0_BASE + ADC_O_SSFIFO3),
+                           ADCBuffer2, ADC_SAMPLE_BUF_SIZE);
+    uDMAChannelAttributeEnable(UDMA_CHANNEL_ADC1, UDMA_ATTR_USEBURST);
+    uDMAChannelEnable(UDMA_CHANNEL_ADC1);
 	
 	TimerConfigure(TIMER1_BASE,TIMER_CFG_B_PERIODIC|TIMER_CFG_SPLIT_PAIR);
-	ADC_init_SS3();
-	ADCSequenceConfigure(ADC1_BASE,3,ADC_TRIGGER_TIMER,0);
+	ADCSequenceConfigure(ADC1_BASE,3,ADC_TRIGGER_TIMER,1);
 	ADC_SS3_SET(ADC_CTL_CH1);
+	ADCSequenceDMAEnable (ADC1_BASE,3);
+  ADCIntEnableEx(ADC1_BASE,ADC_INT_DMA_SS3 );
+   ADCIntRegister(ADC1_BASE,3,ADC0SS3_Handler ); 
+	IntEnable(INT_ADC1SS3);
+													 
 	TimerLoadSet(TIMER1_BASE,TIMER_B,SysCtlClockGet()*4000-1);
-		TimerIntEnable(TIMER1_BASE,TIMER_TIMB_TIMEOUT);
-	TimerIntRegister(TIMER1_BASE,TIMER_B,ADC_V);
+	TimerIntEnable(TIMER1_BASE,TIMER_TIMB_TIMEOUT);
 	TimerEnable (TIMER1_BASE,TIMER_B );
-	IntEnable(INT_TIMER1B);
 	IntMasterEnable();
 	
-	UC1701Init(60000);
 	while(1)
 	{ 	
-	  sum=adcpe0value*3300/4096;
-		int average=sum;
-		int zheng=average/1000;
-		int xiao=average-zheng*1000;
-		sprintf(str,"%d.%03d",zheng,xiao);
-		UC1701Clear();
-		UC1701CharDispaly(0,0,str);
-		SysCtlDelay(SysCtlClockGet()/3000*100);
+	  
 	}	
 		
 		}	
-void ADC_V()
-{
-	TimerControlTrigger(TIMER1_BASE,TIMER_B,true);	
- 	TimerIntClear(TIMER1_BASE,TIMER_TIMB_TIMEOUT);
-	ADCSequenceDataGet(ADC1_BASE,3,&adcpe0value);
-	sum=adcpe0value*3300/4096;
- 
-}

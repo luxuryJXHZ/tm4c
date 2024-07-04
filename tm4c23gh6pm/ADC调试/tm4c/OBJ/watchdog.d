@@ -1,0 +1,10 @@
+.\watchdog.o: ..\LIB\driverlib\watchdog.c
+.\watchdog.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\watchdog.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\watchdog.o: ..\LIB\inc/hw_ints.h
+.\watchdog.o: ..\LIB\inc/hw_memmap.h
+.\watchdog.o: ..\LIB\inc/hw_types.h
+.\watchdog.o: ..\LIB\inc/hw_watchdog.h
+.\watchdog.o: ..\LIB\driverlib/debug.h
+.\watchdog.o: ..\LIB\driverlib/interrupt.h
+.\watchdog.o: ..\LIB\driverlib/watchdog.h

@@ -4,7 +4,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <start.h>
-
+#include <oled.h>
+#include <iic.h>
 
 #include "inc/hw_gpio.h"
 #include "inc/hw_ints.h"
@@ -50,7 +51,7 @@ int main(void)
 	UART0_INT();
 	UARTEnable(UART0_BASE);
 	//配置外设及所需引脚
-	
+	InitI2C0();
 	ADCSequenceConfigure(ADC1_BASE,0,ADC_TRIGGER_PROCESSOR,0);
 	ADCSequenceStepConfigure(ADC1_BASE,0,0,ADC_CTL_CH0);
 	ADCSequenceStepConfigure(ADC1_BASE,0,1,ADC_CTL_CH0);
@@ -61,13 +62,12 @@ int main(void)
 	ADCSequenceStepConfigure(ADC1_BASE,0,6,ADC_CTL_CH0);
 	ADCSequenceStepConfigure(ADC1_BASE,0,7,ADC_CTL_CH0); //配置ADC1，采用ss0序列	
 	
-  ADCIntEnable(ADC1_BASE,0);
-	ADCIntRegister(ADC1_BASE,0,ADC_V);
-	IntPrioritySet(INT_ADC1SS0,0);
-	IntEnable(INT_ADC1SS0);
-	IntMasterEnable();
+//  ADCIntEnable(ADC1_BASE,0);
+//	ADCIntRegister(ADC1_BASE,0,ADC_V);
+//	IntPrioritySet(INT_ADC1SS0,0);
+//	IntEnable(INT_ADC1SS0);
+//	IntMasterEnable();
 	//设置adc的中断函数
-	UC1701Init(60000);
 	while(1)
 	{	
 	  ADCProcessorTrigger(ADC1_BASE,0);
@@ -80,15 +80,12 @@ int main(void)
 		int zheng=average/1000;
 		int xiao=average-zheng*1000;
 		sprintf(str,"%d.%d",zheng,xiao);
-		UC1701Clear();
-		UC1701CharDispaly(0,0,str);
-		SysCtlDelay(SysCtlClockGet()/3000*100);
 		}	
 
 }
 void ADC_V()
 {
-	ADCIntClear(ADC1_BASE,0);
+//	ADCIntClear(ADC1_BASE,0);
 	ADCSequenceDataGet(ADC1_BASE,0,adcpe0value);
 	for(i=0;i<8;i++)
 	{

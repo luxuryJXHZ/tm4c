@@ -4,6 +4,8 @@
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\main.o: ..\USER\start.h
+.\objects\main.o: ..\USER\oled.h
+.\objects\main.o: ..\USER\iic.h
 .\objects\main.o: ..\LIB\inc/hw_gpio.h
 .\objects\main.o: ..\LIB\inc/hw_ints.h
 .\objects\main.o: ..\LIB\inc/hw_memmap.h

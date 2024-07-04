@@ -39,7 +39,7 @@
 //**************************************************************************************	
 void ADC_init_SS0(){	
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC1);
-	GPIOPinTypeADC(PE,P_3);
+	GPIOPinTypeADC(PE,P_2);
 	ADCSequenceEnable(ADC1_BASE,0);
 }
 //**************************************************************************************
@@ -50,7 +50,7 @@ void ADC_init_SS0(){
 //**************************************************************************************	
 void ADC_init_SS1(){	
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC1);
-	GPIOPinTypeADC(PE,P_3);
+	GPIOPinTypeADC(PE,P_2);
 	ADCSequenceEnable(ADC1_BASE,1);
 }
 //**************************************************************************************
@@ -61,7 +61,7 @@ void ADC_init_SS1(){
 //**************************************************************************************	
 void ADC_init_SS2(){	
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC1);
-	GPIOPinTypeADC(PE,P_3);
+	GPIOPinTypeADC(PE,P_2);
 	ADCSequenceEnable(ADC1_BASE,2);
 }
 //**************************************************************************************

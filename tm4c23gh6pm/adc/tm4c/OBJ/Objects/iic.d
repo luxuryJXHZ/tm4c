@@ -1,0 +1,13 @@
+.\objects\iic.o: ..\USER\iic.c
+.\objects\iic.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\iic.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\iic.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\iic.o: ..\USER\iic.h
+.\objects\iic.o: ..\LIB\inc/hw_i2c.h
+.\objects\iic.o: ..\LIB\inc/hw_memmap.h
+.\objects\iic.o: ..\LIB\inc/hw_types.h
+.\objects\iic.o: ..\LIB\inc/hw_gpio.h
+.\objects\iic.o: ..\LIB\driverlib/i2c.h
+.\objects\iic.o: ..\LIB\driverlib/sysctl.h
+.\objects\iic.o: ..\LIB\driverlib/gpio.h
+.\objects\iic.o: ..\LIB\driverlib/pin_map.h

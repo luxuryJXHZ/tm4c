@@ -1,0 +1,11 @@
+.\epi.o: ..\LIB\driverlib\epi.c
+.\epi.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\epi.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\epi.o: ..\LIB\inc/hw_epi.h
+.\epi.o: ..\LIB\inc/hw_ints.h
+.\epi.o: ..\LIB\inc/hw_memmap.h
+.\epi.o: ..\LIB\inc/hw_sysctl.h
+.\epi.o: ..\LIB\inc/hw_types.h
+.\epi.o: ..\LIB\driverlib/debug.h
+.\epi.o: ..\LIB\driverlib/epi.h
+.\epi.o: ..\LIB\driverlib/interrupt.h

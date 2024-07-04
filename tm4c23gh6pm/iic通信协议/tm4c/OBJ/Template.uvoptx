@@ -119,6 +119,10 @@
       <TargetDriverDllRegistry>
         <SetRegEntry>
           <Number>0</Number>
+          <Key>DLGUARM</Key>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
           <Key>ARMRTXEVENTFLAGS</Key>
           <Name>-L70 -Z18 -C0 -M0 -T1</Name>
         </SetRegEntry>
@@ -147,53 +151,21 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>50</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>2380</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>F:\tm4c23gh6pm\iic閫氫俊鍗忚\tm4c\USER\main.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\Template\../USER/main.c\50</Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>53</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>2386</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>F:\tm4c23gh6pm\iic閫氫俊鍗忚\tm4c\USER\main.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\Template\../USER/main.c\53</Expression>
-        </Bp>
-        <Bp>
-          <Number>2</Number>
-          <Type>0</Type>
           <LineNumber>54</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>2394</Address>
+          <Address>2250</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>F:\tm4c23gh6pm\iic閫氫俊鍗忚\tm4c\USER\main.c</Filename>
+          <Filename>F:\tm4c23gh6pm\tm4c\tm4c23gh6pm\iic閫氫俊鍗忚\tm4c\USER\main.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression>\\Template\../USER/main.c\54</Expression>
         </Bp>
         <Bp>
-          <Number>3</Number>
+          <Number>1</Number>
           <Type>0</Type>
           <LineNumber>148</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -204,12 +176,12 @@
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>F:\tm4c23gh6pm\iic閫氫俊鍗忚\tm4c\LIB\iIC\pcf8575.c</Filename>
+          <Filename>F:\tm4c23gh6pm\tm4c\tm4c23gh6pm\iic閫氫俊鍗忚\tm4c\LIB\iIC\pcf8575.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression>\\Template\../LIB/iIC/pcf8575.c\148</Expression>
         </Bp>
         <Bp>
-          <Number>4</Number>
+          <Number>2</Number>
           <Type>0</Type>
           <LineNumber>144</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -220,12 +192,12 @@
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>F:\tm4c23gh6pm\iic閫氫俊鍗忚\tm4c\LIB\iIC\pcf8575.c</Filename>
+          <Filename>F:\tm4c23gh6pm\tm4c\tm4c23gh6pm\iic閫氫俊鍗忚\tm4c\LIB\iIC\pcf8575.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression>\\Template\../LIB/iIC/pcf8575.c\144</Expression>
         </Bp>
         <Bp>
-          <Number>5</Number>
+          <Number>3</Number>
           <Type>0</Type>
           <LineNumber>140</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -236,25 +208,25 @@
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>F:\tm4c23gh6pm\iic閫氫俊鍗忚\tm4c\LIB\iIC\pcf8575.c</Filename>
+          <Filename>F:\tm4c23gh6pm\tm4c\tm4c23gh6pm\iic閫氫俊鍗忚\tm4c\LIB\iIC\pcf8575.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression>\\Template\../LIB/iIC/pcf8575.c\140</Expression>
         </Bp>
         <Bp>
-          <Number>6</Number>
+          <Number>4</Number>
           <Type>0</Type>
-          <LineNumber>140</LineNumber>
+          <LineNumber>53</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>1468</Address>
+          <Address>0</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>F:\tm4c23gh6pm\iic閫氫俊鍗忚\tm4c\LIB\iIC\pcf8575.c</Filename>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>..\USER\main.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\Template\../LIB/iIC/pcf8575.c\140</Expression>
+          <Expression></Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>

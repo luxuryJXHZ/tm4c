@@ -3,7 +3,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
-
+#include <oled.h>
 #include "driverlib/cpu.h"
 #include "driverlib/debug.h"
 #include "driverlib/interrupt.h"
@@ -37,38 +37,22 @@
 #include "driverlib/ssi.h"
 #include "uc1701.h"
 #include "hw_uc1701.h"
-void uart_handle(void);
-char str[100];
+
 int main(void)
 { 
-
-	SysCtlClockSet(SYSCTL_SYSDIV_2_5|SYSCTL_XTAL_16MHZ|SYSCTL_USE_PLL|SYSCTL_OSC_MAIN);
-	SysCtlPeripheralEnable (SYSCTL_PERIPH_GPIOA );
-	SysCtlPeripheralEnable (SYSCTL_PERIPH_UART0);
-	GPIOPinConfigure(GPIO_PA0_U0RX);
-	GPIOPinConfigure(GPIO_PA1_U0TX);
-	GPIOPinTypeUART(GPIO_PORTA_BASE,GPIO_PIN_0);
-	GPIOPinTypeUART(GPIO_PORTA_BASE,GPIO_PIN_1);
-	UARTStdioConfig(0,115200,SysCtlClockGet());
-	UARTIntEnable( UART0_BASE,  UART_INT_RX|UART_INT_RT);
-	UARTIntRegister( UART0_BASE, uart_handle);
-	IntPrioritySet( INT_UART0, 0);
-	IntEnable( INT_UART0);
-	IntMasterEnable();
-	UARTEnable(UART0_BASE);
-	UC1701Init(60000);
-  UC1701Clear();
+ SysCtlClockSet(SYSCTL_SYSDIV_2_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+	GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE,OLED_SCL_PIN|OLED_SDA_PIN);
+	GPIOPinTypeGPIOOutput (GPIO_PORTE_BASE ,GPIO_PIN_2);
+  u8 t=134;
+	OLED_init();
+	OLED_ColorTurn(0);
+	OLED_DisplayTurn(0);
+	OLED_clear();
+	OLEDShowString(0,0,"ABC",16,1);//6*8 ¡°ABC¡±
+	OLED_Refresh();
 	while(1){
-		
+	
 	}
 }
-void uart_handle()
-{ char a;
-	uint32_t ststus;
-	ststus=UARTIntStatus (UART0_BASE,true);
-	UARTIntClear (UART0_BASE,ststus);
-	a=UARTCharGet(UART0_BASE);
-	UARTprintf ("%c",a);	
-	sprintf (str,"%c",a);
-	UC1701CharDispaly(0,0,str);	
-}
+

@@ -42,12 +42,14 @@ int main(void)
 	SysCtlClockSet(SYSCTL_SYSDIV_2_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
 	 GPIO_INIT();
 	while(1)
-	{	for( i=0;i<4095;i++)
-		{dac_sendbite(i);
-		}
-	  for (i=4095;i>0;i--)
-		{dac_sendbite(i);
-		}
-		}	
-
+	{	
+//		for( i=0;i<4095;i++)
+//		{dac_sendbite(i);
+//		}
+//	  for (i=4095;i>0;i--)
+//		{dac_sendbite(i);
+//		}
+//		}	
+dac_sendbite(567);
+	}
 }
