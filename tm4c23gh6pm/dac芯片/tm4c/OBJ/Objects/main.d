@@ -30,5 +30,6 @@
 .\objects\main.o: ..\LIB\screen\uc1701.h
 .\objects\main.o: ..\LIB\screen\hw_uc1701.h
 .\objects\main.o: ..\LIB\screen\uc1701.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\objects\main.o: ..\LIB\utils/uartstdio.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h

@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <start.h>
 #include <lxy_dac.h>
+#include <math.h>
 
 
 #include "inc/hw_gpio.h"
@@ -38,18 +39,19 @@
 #include "utils/uartstdio.h"
 
 int main(void)
-{ int i;
+{ int i,y;
 	SysCtlClockSet(SYSCTL_SYSDIV_2_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
 	 GPIO_INIT();
 	while(1)
 	{	
-//		for( i=0;i<4095;i++)
-//		{dac_sendbite(i);
-//		}
-//	  for (i=4095;i>0;i--)
-//		{dac_sendbite(i);
-//		}
-//		}	
-dac_sendbite(567);
+		for( i=0;i<3500;i++)
+		{y=sin(i/3500)*3500;
+			dac_sendbite(y);
+		}
+		for( i=3500;i>0;i--)
+		{y=sin(i/3500)*3500;
+				dac_sendbite(y);
+		}
+		}	
 	}
-}
+

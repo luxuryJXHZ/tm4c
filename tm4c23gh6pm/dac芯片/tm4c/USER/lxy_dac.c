@@ -53,7 +53,7 @@ void dac_sendbite(uint16_t a)
 { int i;
 	
 	NSS0;
-	SysCtlDelay(10);
+	//SysCtlDelay(10);
 	for ( i=0;i<16;i++)
 	{CLK1;
 		
@@ -63,10 +63,10 @@ void dac_sendbite(uint16_t a)
 	else 
 	{data0;
 	}
-	SysCtlDelay(10);
+	//SysCtlDelay(10);
 	CLK0;
 	a=a<<1;
-	SysCtlDelay(10);
+	//SysCtlDelay(10);
 	
 	}
 	NSS1;
