@@ -78,13 +78,13 @@ int main(void)
 		for(i=0;i<4;i++)
 		{total1=total1+sum[i];
 		}
-		for(i=4;i<7;i++)
+		for(i=4;i<8;i++)
 		{total2=total2+sum[i];
 		}
-		int average=total1/8;
+		int average=total1/4;
 		int zheng=average/1000;
 		int xiao=average-zheng*1000;
-		int average1=total2/4.2;
+		int average1=total2/4;
 		int zheng1=average1/1000;
 		int xiao1=average1-zheng1*1000;
 		sprintf(str,"%d.%03d",zheng,xiao);

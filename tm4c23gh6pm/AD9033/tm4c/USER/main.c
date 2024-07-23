@@ -3,7 +3,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <start.h>
-#include <lxy_dac.h>
+#include <lxy_AD9833.h>
 #include <math.h>
 
 
@@ -41,10 +41,12 @@
 int main(void)
 { int i,y;
 	SysCtlClockSet(SYSCTL_SYSDIV_2_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+	GPIO_INIT();
 	while(1)
-	{	
+	{	AD9833_AmpSet(50);
+		AD9833_WaveSeting(50000,0,TRI_WAVE,0);
 
 		}
 		}	
-	}
+	
 
